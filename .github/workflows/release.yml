@@ -76,7 +76,11 @@ jobs:
             git checkout $LATEST_COMMIT_SHA
             TAG="test"
             RELEASE_VERSION="0.0.0-${LATEST_COMMIT_SHA:0:7}"
-          elif [[ $PACKAGE_VERSION != $LATEST_VERSION ]]; then
+          elif [[ $GITHUB_REF_NAME == "${{ github.event.repository.default_branch }}" ]]; then
+            if [[ $PACKAGE_VERSION == $LATEST_VERSION ]]; then
+              echo "$PACKAGE_NAME@$PACKAGE_VERSION is already the latest release. Skipping publish."
+              exit 0
+            fi
             RELEASE_VERSION=$PACKAGE_VERSION
             HAS_TAG=$(echo $PACKAGE_VERSION | grep -o '[a-zA-Z]*' | head -n 1)
             TAG=$([[ -n "$HAS_TAG" ]] && echo $HAS_TAG || echo "latest")
