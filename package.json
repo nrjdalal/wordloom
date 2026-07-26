@@ -1,6 +1,6 @@
 {
   "name": "wordloom",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Find short, pronounceable names for brands, products, and projects.",
   "keywords": [
     "cli",
