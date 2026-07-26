@@ -41,8 +41,8 @@ If a candidate already has a dictionary meaning, `wordloom` tells you — so you
 npx wordloom
 npx wordloom --prefix no
 npx wordloom --suffix ut
-npx wordloom --contains abse
-npx wordloom --length 6 --prefix abs
+npx wordloom --contains bel
+npx wordloom --length 5 --prefix z --suffix da
 ```
 
 Default length is `5`. Supported lengths are `2` through `8`.
@@ -65,7 +65,7 @@ wordloom --help
 You can also run it without installing:
 
 ```sh
-npx wordloom --contains abse
+npx wordloom --contains bel
 ```
 
 ## Options
@@ -86,9 +86,9 @@ wordloom                              # 5-letter names
 wordloom --length 6                   # 6-letter names
 wordloom --prefix no                  # names starting with "no"
 wordloom --suffix ut                  # names ending in "ut"
-wordloom --contains abse              # names containing "abse"
-wordloom --length 6 --prefix abs      # combine filters
-wordloom --length 5 --prefix re --suffix t
+wordloom --contains bel               # names containing "bel"
+wordloom --length 5 --prefix z --suffix da
+wordloom --length 5 --prefix no --suffix el
 ```
 
 ## How it works
